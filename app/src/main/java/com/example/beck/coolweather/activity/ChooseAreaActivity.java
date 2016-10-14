@@ -7,6 +7,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.beck.coolweather.R;
+import com.example.beck.coolweather.util.HttpCallbackLister;
+import com.example.beck.coolweather.util.HttpUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +35,18 @@ public class ChooseAreaActivity extends Activity {
         listView.setAdapter(adapter);
     }
     public void getAreaFromServer(){
+        String url="http://www.weather.com.cn/data/list3/city.xml";
+        HttpUtil.sendHttpRequest(url, new HttpCallbackLister() {
+            @Override
+            public void onFinish(String response) {
 
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
     }
 
 }

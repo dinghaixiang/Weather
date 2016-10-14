@@ -15,9 +15,9 @@ import java.net.URL;
  * Created by beck on 2016/10/13.
  */
 public class HttpUtil {
-    HttpURLConnection httpURLConnection = null;
+    static HttpURLConnection  httpURLConnection = null;
 
-    public void sendHttpRequest(final String address, final HttpCallbackLister lister) {
+    public  static void  sendHttpRequest(final String address, final HttpCallbackLister lister) {
         new Thread(new Runnable() {
             @Override
             public void run() {
