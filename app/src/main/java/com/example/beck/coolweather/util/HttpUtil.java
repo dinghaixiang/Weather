@@ -51,7 +51,7 @@ public class HttpUtil {
         }).start();
     }
 
-    public synchronized boolean  handleResponse(CoolWeatherDB db, String response,String flag,String id) {
+    public synchronized static boolean  handleResponse(CoolWeatherDB db, String response,String flag,String id) {
         if (response != null) {
             String[] all = response.split(",");
             for (int i = 0; i < all.length; i++) {
