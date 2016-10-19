@@ -1,6 +1,7 @@
 package com.example.beck.coolweather.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -59,6 +60,12 @@ public class ChooseAreaActivity extends Activity {
                 } else if (currentLevel.equals(CITY_LEVEL)) {
                     selectedCity = cityList.get(position);
                     queryCountry(selectedCity.getCityCode());
+                }else if(currentLevel.equals(COUNTRY_LEVEL)){
+                    selectedCountry=countryList.get(position);
+                    Intent intent=new Intent(ChooseAreaActivity.this,WeatherActivity.class);
+                    intent.putExtra("country_code",selectedCountry.getCountryCode());
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
